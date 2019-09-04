@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>User List</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>User List</h1>
-    <ul>
+
+<head>
+  <title>User List</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>User List</h1>
+  <table style="width:100%">
+    <tr>
+      <th align="left">Username</th>
+      <th align="left">Email</th>
+      <th align="left">Age</th>
+      <th align="left">DOB</th>
+    </tr>
       <%
         var list = '';
         for (i = 0; i < userlist.length; i++) {
-          list += '<li><p>' + userlist[i].username + " " + userlist[i].email + " " + userlist[i].age + " " + userlist[i].dob + '</p></li>';
+          <!-- list += '<td>' + userlist[i].username + " " + userlist[i].email + " " + userlist[i].age + " " + userlist[i].dob + '</td>'; -->
+          list += '<tr>' + '<td>' + userlist[i].username + '</td>' + '<td>' + userlist[i].email + '</td>' + '<td>' + userlist[i].age + '</td>' + '<td>' + userlist[i].dob + '</td>' + '</tr>';
         }
       %>
       <%- list %>
-    </ul>
-  </body>
+  </table>
+</body>
+
 </html>
